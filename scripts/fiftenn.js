@@ -100,15 +100,13 @@ function swapTiles(selectedCell,destinationCell){
 	}	
 }
 function puzzleIsComplete(){
+	var sortString = "";
 	var img = $("#puzzleGrid").find("img");
-	var correctCount = 0;
-	for(var i = 0; i < img.length-1; i++){
-		if(img[i].alt == img[i].parentNode.id.slice(4)){
-			correctCount++;
-			console.log(correctCount);
-		}
+	for(var i = 0; i < img.length - 1; i++){
+		sortString += img[i].alt;
 	}
-	if(correctCount == 8){
+	// console.log(sortString);
+	if(sortString == "12345678"){
 		return true;
 	}
 	return false;
